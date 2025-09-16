@@ -4,22 +4,72 @@ nav {
     align-items: center;
     line-height: 0;
     padding-block: 20px;
-}
-nav ul{
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  padding-block: 8px;
-}
-nav ul li:last-child img{
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  /*caso ultilize outra imagem que nao esteja nessas proporcões ultilize os comandos a baixo*/
-  /* object-fit: cover; */
-  /* border-radius: 50%; */
+    flex-wrap: wrap;
+    gap: 16px;
 }
 
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding-block: 8px;
+    flex-wrap: wrap;
+}
 
- 
+nav ul li:last-child img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Estilo para os itens do menu */
+#primary-menu li {
+    display: flex;
+    align-items: center;
+}
+
+#primary-menu a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+#primary-menu a:hover {
+    background-color: rgba(239, 95, 76, 0.1);
+    color: var(--brand-color);
+    text-decoration: none;
+}
+
+/* Para telas menores - evitar sobreposição */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    nav ul {
+        gap: 16px;
+        justify-content: center;
+    }
+    
+    #primary-menu a {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+    
+    #primary-menu a img {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (min-width: 1440px) {
+    nav {
+        padding-inline: 5%;
+    }
+}

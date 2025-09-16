@@ -1,0 +1,39 @@
+/* Tablet */
+@media (max-width: 768px) {
+  /* Menu de navegação */
+  nav {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  #primary-menu {
+    gap: 16px;
+  }
+
+  /* Galeria de imagens */
+  main img {
+    width: calc(50% - 12px);
+    height: auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .container {
+    padding-inline: 16px;
+  }
+
+  main img {
+    width: 100%;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  footer span:nth-child(1) {
+    margin-right: 0;
+  }
+}

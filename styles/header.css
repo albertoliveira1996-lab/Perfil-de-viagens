@@ -2,45 +2,111 @@ header {
   padding-block: 32px;
   font: var(--text-md);
 }
+
 header .container{
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
+
 #profile{
   display:flex;
-  
   gap:32px;
-
+  align-items: flex-start;
 }
 
 #profile> div{
   max-width: 384px;
-  
-
 }
+
 #profile img{
-  width: 176px;
-  height: 176px;
+  width: 120px;
+  height: 120px;
   object-fit: cover;
   border-radius: 50%;
-  
 }
+
 #profile h1 {
   font: var(--text-lg);
-  color: var(--tex-color-primary);
+  color: var(--text-color-primary);
   margin-bottom: 8px;
 }
+
+#profile p {
+  font: var(--text-md);
+  color: var(--text-color-secondary);
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
 #info{
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 16px;
   width: 280px;
-
 }
+
 #info li{
   display: flex;
   align-items: center;
   gap: 8px;
+  background-color: var(--background-color);
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
 
+/* Para telas muito largas, ajustar o layout do header */
+@media (min-width: 1440px) {
+  header .container {
+    justify-content: space-between;
+  }
+  
+  #profile > div {
+    max-width: 500px;
+  }
+}
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    gap: 32px;
+  }
+  
+  #profile {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  
+  #info {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  #info li {
+    flex: 1;
+    min-width: 160px;
+    justify-content: center;
+  }
+}
+
+/* Responsividade para mobile */
+@media (max-width: 480px) {
+  #profile img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  #info {
+    flex-direction: column;
+  }
+  
+  #info li {
+    min-width: 100%;
+  }
 }

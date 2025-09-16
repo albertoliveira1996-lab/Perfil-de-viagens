@@ -2,8 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
+
 :root{
   --brand-color: #EF5F4C;
   --background-color: #FFFFFF;
@@ -18,7 +18,6 @@
   --text: 16px/1.5 var(--font-family);
   --text-md: 14px/1.7 var(--font-family);
   --text-sm: 12px/1.7 var(--font-family);
-
 }
 
 body{ 
@@ -26,19 +25,42 @@ body{
   color: var(--text-color-secondary);
   background-color: var(--background-color);
 }
+
 a{
   text-decoration: none;
   color: inherit;
 }
+
 a:hover{
   color: var(--brand-color);
   text-decoration: underline;
 }
+
 .container{ 
   padding-inline: 32px;
   margin-inline: auto;
   max-width: 1280px;
 }
+
 .bg-surface-color{
   background-color: var(--surface-color);
+}
+
+/* Limitar a largura máxima para evitar que o conteúdo se espalhe demais */
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1440px;
+  }
+}
+
+/* Para telas ultra wide (acima de 2000px) */
+@media (min-width: 2000px) {
+  body {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .container {
+    max-width: 1600px;
+  }
 }
